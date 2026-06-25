@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semantic HTML Tags</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f7fb;
+        }
+        header, nav, main, article, section, aside, footer {
+            padding: 18px;
+            margin: 12px auto;
+            max-width: 980px;
+            background: #ffffff;
+            border: 1px solid #d7e1ec;
+            border-radius: 10px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        nav a {
+            color: #0f4c81;
+            text-decoration: none;
+        }
+        aside {
+            background: #eef5ff;
+        }
+        footer {
+            text-align: center;
+            background: #edf7f3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Semantic HTML Tags</h1>
+        <p>HTML5 semantic tags give meaning to page structure and improve accessibility.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#article">Article</a></li>
+            <li><a href="#section">Section</a></li>
+            <li><a href="#aside">Aside</a></li>
+            <li><a href="#footer">Footer</a></li>
+            <li><a href="semantic-responsive.html">Responsive Semantic Example</a></li>
+            <li><a href="responsive.html">Responsive CSS Example</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <article id="article">
+            <h2>Article Element</h2>
+            <p>The `<article>` tag represents a self-contained piece of content, such as a blog post or news story.</p>
+        </article>
+
+        <section id="section">
+            <h2>Section Element</h2>
+            <p>The `<section>` tag groups related content under a common heading.</p>
+        </section>
+
+        <aside id="aside">
+            <h2>Aside Element</h2>
+            <p>The `<aside>` tag contains related information that is separate from the main content, like notes or advertisements.</p>
+        </aside>
+
+        <figure>
+            <img src="Avatar.jpg" alt="Avatar example" style="max-width:100%;border-radius:10px;border:1px solid #cfd8e3;">
+            <figcaption>Example of `<figure>` with `<figcaption>`.</figcaption>
+        </figure>
+
+        <address>
+            <strong>Contact:</strong><br>
+            123 Example Street<br>
+            City, Country<br>
+            <a href="mailto:contact@example.com">contact@example.com</a>
+        </address>
+    </main>
+
+    <footer id="footer">
+        <p>Copyright 2026 Semantic HTML Example</p>
+    </footer>
+</body>
+</html>

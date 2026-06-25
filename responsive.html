@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Layout</title>
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Responsive CSS Example</h1>
+            <p>This page uses a fluid grid and media queries to adapt to different screen sizes.</p>
+        </header>
+
+        <nav class="navbar">
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <section id="features" class="grid">
+            <article class="card">
+                <h2>Flexible Grid</h2>
+                <p>The layout changes from three columns to two columns and then one column on smaller screens.</p>
+            </article>
+            <article class="card">
+                <h2>Responsive Navigation</h2>
+                <p>The navigation buttons stack vertically on narrow devices for better usability.</p>
+            </article>
+            <article class="card">
+                <h2>Mobile Friendly</h2>
+                <p>Text and spacing remain readable and comfortable on phones and tablets.</p>
+            </article>
+        </section>
+
+        <footer>
+            <p>Responsive CSS demo using `@media` queries.</p>
+        </footer>
+    </div>
+</body>
+</html>

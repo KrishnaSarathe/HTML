@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to JJK World</title>
+
+    <style>
+        /* --- JJK Satoru Gojo Theme --- */
+
+        /* 1. Global Styles and Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Replace 'PLACEHOLDER_FOR_GOJO_IMAGE_URL' with your found Gojo image link */
+            background-image: url('https://substackcdn.com/image/fetch/$s_!UEGM!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff5b48575-8334-4363-8a3d-82fd704e06ef_1800x900.avif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f0f0f0;
+            line-height: 1.6;
+            position: relative;
+        }
+
+        /* Semi-transparent overlay to ensure text is always readable */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            /* Black overlay with 70% opacity */
+            z-index: -1;
+        }
+
+        /* 2. Main Content Container */
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: rgba(20, 20, 30, 0.9);
+            /* Dark blue/black for main content */
+            border-left: 5px solid #6c5ce7;
+            /* Purple accent */
+            border-right: 5px solid #0984e3;
+            /* Blue accent */
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 3. Typography */
+        h1 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #6c5ce7, 0 0 20px #0984e3;
+            /* Glowing effect */
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #a29bfe;
+            /* Light purple */
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #6c5ce7;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #a29bfe;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, transparent, #0984e3, transparent);
+            margin: 30px 0;
+        }
+
+        /* 4. Lists */
+        ol,
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        /* 5. Buttons and Links */
+        button {
+            background-color: #2d3436;
+            /* Dark base */
+            border: 2px solid #6c5ce7;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            padding: 5px;
+            margin-right: 5px;
+        }
+
+        button:hover {
+            background-color: #6c5ce7;
+            /* Purple on hover */
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+
+        a {
+            color: #0984e3;
+            /* Core Blue for links */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        button a {
+            color: #fff;
+            /* Button links are white */
+            padding: 5px 10px;
+            display: inline-block;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        button:hover a {
+            color: #fff;
+        }
+
+        /* 6. General Image Styles */
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 30px auto;
+            border: 5px solid #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        /* 7. Anime Details Table (Standard) */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background-color: #1a1d24;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        th {
+            background-color: #6c5ce7;
+            /* Purple header */
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: rgba(9, 132, 227, 0.1);
+            /* Blue highlight on hover */
+        }
+
+        /* 8. Aesthetic Table for Clans */
+        .aesthetic-table {
+            border: 2px solid #6c5ce7;
+            box-shadow: 0 0 20px rgba(108, 92, 231, 0.2);
+        }
+
+        .aesthetic-table th {
+            background: linear-gradient(90deg, #6c5ce7, #0984e3);
+            text-align: center;
+            border-bottom: 3px solid #fff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .aesthetic-table td {
+            text-align: center;
+            vertical-align: middle;
+            border-right: 1px solid #333;
+        }
+
+        .aesthetic-table td:last-child {
+            border-right: none;
+        }
+
+        .aesthetic-table td:nth-child(1) {
+            font-weight: bold;
+            color: #a29bfe;
+            font-size: 1.2em;
+            letter-spacing: 1px;
+        }
+
+        .aesthetic-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        /* --- NEW: Poster Gallery Styles --- */
+        .poster-gallery {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .poster-item {
+            flex: 1 1 0; /* Ensures all three columns have the exact same width */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .poster-item img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 2 / 3; /* Forces standard poster sizing */
+            object-fit: cover; /* Crops image cleanly if ratios don't perfectly match */
+            margin: 0; /* Resets the global image margin */
+        }
+
+        /* Responsive stack for mobile */
+        @media (max-width: 768px) {
+            .poster-gallery {
+                flex-direction: column;
+            }
+            .poster-item img {
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
+        /* ---------------------------------- */
+
+        /* 10. Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            border-top: 1px solid #333;
+            color: #aaa;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content-container">
+
+        <h1>Welcome to Jujutsu Kaisen</h1>
+
+        <p>
+            Jujutsu Kaisen is a Japanese anime and manga series that follows Yuji Itadori
+            as he battles curses with the help of his friends and mentors.
+            The series is known for its intense action, complex characters, and dark themes.
+            The story revolves around Yuji Itadori, a high school student with exceptional physical abilities.
+            After the death of his grandfather, Yuji finds himself drawn into the world of Jujutsu Sorcery when he comes
+            into contact with a cursed object—a rotting finger imbued with an ancient curse.
+        </p>
+
+        <hr>
+
+        <h2>Main Characters</h2>
+        <ol>
+            <li>Satoru Gojo</li>
+            <li>Yuji Itadori</li>
+            <li>Ryomen Sukuna</li>
+            <li>Yuta Okotsu</li>
+            <li>Kenjaku</li>
+            <li>Tengen</li>
+            <li>Nobara Kugisaki</li>
+            <li>Megumi Fushiguro</li>
+        </ol>
+
+        <h2>Strongest Sorcerers</h2>
+        <ul>
+            <li><button><a href="https://en.wikipedia.org/wiki/Modulo_Yuji Itadori: The Overpowered Sukuna Re-gen"
+                        target="_blank"><img
+                            src="https://fwmedia.fandomwire.com/wp-content/uploads/2026/03/09083040/jujutsu-kaisen-modulo-ending-yuji-sukuna-1122x631.jpg"
+                            alt="Modulo_Yuji Itadori"></a></button></li>
+            <p>Our very own Yuji is now all grown up (too much, actually), and in Volume 3 of Jujutsu Kaisen Modulo (via
+                @Go_Jover), he has finally been revealed as a special grade sorcerer.<br> He is no longer the neglected
+                main character that many claimed he was; he is now the face of the franchise, the strongest in the
+                verse.
+                If you thought Gojo was overpowered, wait until you learn about Yuji’s current abilities. Drastically
+                slowed down aging, Blood Manipulation, Sukuna’s techniques, RCT, Black Flash, Domain Expansion, immense
+                strength and speed; you name it, Yuji has it. <br> His growth after the final battle against Sukuna has
+                been unprecedented over the years, and it was well demonstrated against the rematch against Mahito (if
+                you wanna call it that even) in Modulo Chapter 22.</p>
+
+            <li><button><a href="https://en.wikipedia.org/wiki/Satoru_Gojo" target="_blank"><img
+                            src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/10/04085233/gojo-satoru-jjk.png?width=1600&height=1000&quality=85&sharpen=true&format=webp&aspect_ratio=1600%3A1000&crop=center"
+                            alt="Satoru Gojo"></a></button></li>
+            <p>Satoru Gojo is a Special Grade Jujutsu Sorcerer and widely recognized as the strongest sorcerer in the
+                world. He is the pride of the Gojo Family, the first person to inherit both the Limitless and the Six
+                Eyes in four hundred years.<br> He works as a teacher at the Tokyo Jujutsu High and uses his influence
+                to protect and train strong young allies.<br> His Domain Expansion, Unlimited Void, overwhelms the
+                target's mind with endless information, leaving them completely paralyzed.
+                In Jujutsu Kaisen, Gojo isn’t only breaking the game; he IS THE GAME. With Limitless and the Six Eyes,
+                he can perceive and manipulate everything while hardly using any of his cursed energy.<br> His Infinity
+                makes attacks stop before they even reach him, and his Red, Blue, and Purple skills can wipe matter from
+                existence like it never existed.
+                He also mixes enhanced martial arts to slap around special-grade cursed spirits like they’re training
+                dummies.<br> Gojo is literally the ceiling of power in the Jujutsu universe, and nobody comes close.
+                He’s the guy every cursed spirit secretly fears, and every fan secretly wishes they could fight, or
+                perhaps not.</p>
+
+            <li><button><a href="https://jujutsu-kaisen.fandom.com/wiki/Yuta_Okkotsu" target="_blank"><img
+                            src="https://tse1.mm.bing.net/th/id/OIP.o5R9veoLhMXj2YtUT9tmMgHaMn?rs=1&pid=ImgDetMain&o=7&rm=3"
+                            alt="Yuta Okkotsu"></a></button></li>
+            <p>Yuta Okkotsu is a Special Grade Jujutsu Sorcerer who was initially cursed by his childhood friend, Rika
+                Orimoto. After enrolling in Jujutsu High, he learned to channel her immense power.<br> He possesses even
+                more cursed energy than Satoru Gojo and has the rare ability to unconditionally copy other cursed
+                techniques.<br> He is a prodigy in combat and is widely considered to be second only to Satoru Gojo in
+                modern sorcery.
+                Yuta’s story hits different in Jujutsu Kaisen. Once a cursed human haunted by his childhood friend Rika
+                (turned into a curse), he learned to harness that power and became one of the top dogs. Rika’s cursed
+                energy is insane, and Yuta can tap into it like it’s nothing, boosting his attacks and healing himself
+                like a pro.
+
+                Yuta Okkotsu channeling Rika’s immense cursed energy while wielding his sword.
+
+                He’s also a tech wizard in cursed techniques, copying Toge Inumaki’s Cursed Speech, summoning shikigami,
+                and more. On top of that, his swordplay is top-tier, making him deadly in every type of fight. If you
+                thought Geto and Yuki were scary, Yuta’s versatility and raw power put him a way higher.</p>
+
+            <li><button><a href="https://jujutsu-kaisen.fandom.com/wiki/Kenjaku" target="_blank"><img
+                            src="https://tse1.mm.bing.net/th/id/OIP.pOCLWfjjGL9EZ-Qoh-aDqAHaEw?rs=1&pid=ImgDetMain&o=7&rm=3"
+                            alt="Kenjaku"></a></button></li>
+            <p>Kenjaku is an ancient and powerful curse user in Jujutsu Kaisen who extends his life by transplanting his
+                brain into other bodies, manipulating events over centuries to achieve his goals.
+                Identity and Background
+                Kenjaku is a centuries-old sorcerer whose true appearance is unknown. He has survived for over a
+                thousand years by using his innate technique, Brain Transplant, which allows him to transfer his brain
+                into other bodies and control them while retaining his own consciousness and memories. Over time, he has
+                inhabited numerous individuals, including Noritoshi Kamo, the creator of the Cursed Womb: Death
+                Paintings, Kaori Itadori, Yuji Itadori’s mother, and Suguru Geto, whose body he used to exploit Cursed
+                Spirit Manipulation.<br> Each host retains Kenjaku’s signature stitched scar on the forehead, marking
+                the brain transplant site.
+                Personality
+                Kenjaku is manipulative, egotistical, and highly intelligent. He can appear cheerful, playful, or
+                charming, but beneath this demeanor lies a calculating and ruthless individual who will harm anyone to
+                achieve his ambitions. He enjoys long monologues, often educating or taunting others while demonstrating
+                his superiority.
+                Motivations
+                Kenjaku’s ultimate goal is to push human evolution to the next stage by merging humanity with Tengen and
+                manipulating cursed energy on a global scale. His actions are not merely for destruction; they are part
+                of a long-term vision to reshape the world according to his designs. He has been influencing Jujutsu
+                society for centuries, using his hosts to manipulate sorcerers and orchestrate major events.
+                Summary
+                Kenjaku is the central antagonist of Jujutsu Kaisen, embodying centuries of cunning, power, and
+                manipulation. Through his brain-transplant technique, mastery of cursed techniques, and strategic
+                foresight, he has become a nearly unstoppable force, shaping the series’ events and challenging the
+                protagonists in profound ways.
+                Abilities and Skills
+                Kenjaku is an exceptionally skilled sorcerer with a deep understanding of jujutsu techniques. His
+                abilities include:
+                Cursed Spirit Manipulation: Mastered while inhabiting Suguru Geto’s body, allowing him to control
+                powerful cursed spirits.
+                Barrier Techniques: Recognized as the second most powerful barrier user after Tengen.
+                Turning Sorcerers into Cursed Objects: A rare technique even Sukuna did not know during the Heian Era.
+                Brain Transplant: Enables him to inherit the abilities, cursed energy, and memories of his hosts,
+                effectively making him adaptable and nearly immortal.
+                Kenjaku is also a master strategist, often planning events centuries in advance, such as orchestrating
+                the Shibuya Incident and initiating the Culling Game.
+            </p>
+
+            <li><button><a href="https://jujutsu-kaisen.fandom.com/wiki/Yuki_Tsukumo" target="_blank"><img
+                            src="https://otakusun.com/wp-content/uploads/2022/08/Yuki-Tsukumo.jpg"
+                            alt="Yuki Tsukumo"></a></button></li>
+            <p>Yuki Tsukumo is one of the four Special Grade Jujutsu Sorcerers. Unlike the others, she does not take on
+                missions from Jujutsu High, preferring to travel the world to find a way to eliminate cursed energy
+                entirely.<br> Her innate technique, Star Rage, allows her to add an overwhelming amount of "virtual
+                mass" to herself and her shikigami, Garuda.<br> This makes her physical strikes devastatingly powerful,
+                capable of shattering even the strongest defenses.
+                Yuki is one of the rarest special grades, and she likes keeping it that way. She doesn’t care much for
+                missions unless she wants to, and her philosophy is 'stop curses before they even exist.' Sounds chill,
+                but also terrifying if you’re a curse. She trained Aoi Todo, teaching him insane stuff like Simple
+                Domain counters against Domain Expansions.
+
+                Yuki Tsukumo unleashing her Star Rage technique with Garuda by her side.
+                In battle, Yuki is all about throwing hard and fast. Her cursed technique, Star Rage, provides her and
+                her shikigami Garuda with virtual mass, so her blows strike like a truck, or a building, probably.
+
+                Add her Simple Domain that cancels out other cursed techniques, and she’s basically unstoppable up
+                close. We haven’t seen her at full strength yet, but the rumors are terrifying enough.</p>
+
+            <li><button><a href="https://jujutsu-kaisen.fandom.com/wiki/Suguru_Geto" target="_blank"><img
+                            src="https://fwmedia.fandomwire.com/wp-content/uploads/2024/04/10025358/jujutsu-kaisen-1-3-3-1536x769.jpg"
+                            alt="Suguru Geto"></a></button></li>
+            <p>Geto is the love-to-hate guy. At one time, best buddies with Gojo Satoru at Jujutsu High, he turned
+                against the human world after hating humans for literally existing.
+                His main thing? Collecting cursed spirits like some twisted Pokémon trainer. Each curse has unique
+                abilities, and he can combine them for some devastating attacks. Geto also has crazy reflexes, battle
+                IQ, and can swing the Playful Cloud (a three-section staff that’s deadly in his hands).
+                Back in his student days, he was basically Gojo’s equal, but now? He’s strong, scary, but not quite
+                top-tier anymore.
+            </p>
+        </ul>
+
+        <h2>Popular Curses</h2>
+        <ul>
+            <li><button><a href="https://en.wikipedia.org/wiki/Sukuna" target="_blank"><img
+                            src="https://fwmedia.fandomwire.com/wp-content/uploads/2025/07/30074034/Sukuna.webp?width=1600&height=1000&quality=85&sharpen=true&format=webp&aspect_ratio=1600%3A1000&crop=center"
+                            alt="Sukuna"></a></button></li>
+            <p>Sukuna is the most powerful Special Grade Curse and is the undisputed King of Curses in Jujutsu
+                Kaisen.<br> He used to be an undefeated sorcerer as a human and felled countless other sorcerers. Even
+                after death, he continued existing as a cursed object by dividing his cursed energy and soul into his
+                indestructible fingers.
+
+                Sukuna has an immense amount of cursed energy and is a master at hand-to-hand combat. He also has
+                unmatched physical strength, speed, reflexes, and durability. <br>Needless to say, he is the biggest
+                antagonist of the story. He is a sadist to the core and also equipped with great tactical intellect.
+
+                His innate technique, Shrine, allows him to launch slashes to cut through objects and space. He can use
+                Dismantle, Cleave, and Spiderweb, and can gain access to tons of Shikigami.<br> His most powerful
+                shinigami is Mahoraga. He is also able to completely heal himself via Reverse Cursed Technique. His
+                Domain Expansion, Malevolent Shrine, allows everything within it to be relentlessly slashed.</p>
+
+            <li><button><a href="https://en.wikipedia.org/wiki/Rika_Orimoto" target="_blank"><img
+                            src="https://fandomwire.com/wp-content/uploads/2023/12/rika-jujutsu-kaisen-1122x632.png"
+                            alt="Rika Orimoto"></a></button></li>
+            <p>Rika is the Cursed Spirit that remains with Yuta. Rika Orimoto, Yuta’s childhood friend, died in an
+                accident and transformed into a Special Grade vengeful Cursed Spirit. <br>She remained with Yuta for
+                decades till he allowed her to pass on, leaving a Cursed Spirit as the last vestiges of her will.
+
+                Rika has been dubbed the Queen of Curses and is a powerful Special Grade curse with immesuarable cursed
+                energy. She can use both physical attacks and jujutsu, and even tore apart a huge spirit with her bare
+                hands.<br> Rika can copy techniques, even the Inumaki Family’s technique, reinforcing commands with
+                compulsion. Yuta can access these techniques via Rika. She can also rip open her chest to expose an
+                entire arsenal of cursed tools stored within her body for Yuta’s access.</p>
+
+            <li><button><a href="https://en.wikipedia.org/wiki/Jogo" target="_blank"><img
+                            src="https://fandomwire.com/wp-content/uploads/2023/11/jogo.png?width=1600&height=1000&quality=85&sharpen=true&format=webp&aspect_ratio=1600%3A1000&crop=center"
+                            alt="Jogo"></a></button></li>
+            <p>Jogo is an unregistered Special Grade Cursed Spirit and was born of humanity’s fear of earth,
+                specifically fire-based natural disasters.<br> Even Sukuna acknowledged that Jogo’s maximum technique
+                would have hurt him had it landed. His cursed energy can be comparable to 8 or 9 of Sukuna’s fingers.
+                His innate volcanic technique allows him to produce cursed flames or manifest small volcanic openings.
+
+                His maximum technique allows him to generate a huge flaming meteor which he hurls a his target.<br> His
+                Domain Expansion, Coffing of the Iron Mountain, constructs the inside of a volcano, which he can
+                manipulate at will. An average sorcerer burns up on impact, and it’s a deadly attack.</p>
+
+            <li><button><a href="https://en.wikipedia.org/wiki/Mahito" target="_blank"><img
+                            src="https://fwmedia.fandomwire.com/wp-content/uploads/2025/05/20040411/mahito_yells.png?width=1600&height=1000&quality=85&sharpen=true&format=webp&aspect_ratio=1600%3A1000&crop=center"
+                            alt="Mahito"></a></button></li>
+            <p>Mahito is an unregistered Special Grade Cursed Spirit. His ultimate goal is the eradication of humanity
+                and to replace the population with Cursed Spirits. <br>His power exceeded that of at least three of
+                Sukuna’s fingers when he first encountered Yuji. He has a rapid growth rate and high intelligence, which
+                render him dangerous.
+
+                He was capable of overwhelming Namami and Yuji, if not for Sukuna’s intervention. He has a vast amount
+                of cursed energy, and he uses Black Flash, a potent power. <br>His cursed technique lets him reshape
+                souls, and he uses it to disfigure the bodies of his victims, heal his own wounds, and for other uses.
+
+                He can also merge souls together or strengthen his own body.<br> Mahito can create a barrier called a
+                Curtain, and his Domain Expansion, Self Embodiment of Perfection, lets him create an environment where
+                his Idle Transfiguration Technique becomes guaranteed to hit his targets.</p>
+
+            <li><button><a href="https://en.wikipedia.org/wiki/Hanami" target="_blank"><img
+                            src="https://fwmedia.fandomwire.com/wp-content/uploads/2023/08/02025125/wp10093817-1122x631.png"
+                            alt="Hanami"></a></button></li>
+            <p>Hanami is an unregistered Special Grade Cursed Spirit who was born from the fear of land-based natural
+                disasters. <br>They can control plants and have an uncanny ability to hide their presence. They were
+                even able to take Satoru Gojo by surprise due to their high intellect and escape abilities. Hanami
+                passed through the barriers of Jujutsu High and took on six of their elite students.
+
+                Hanami uses Disaster Plants to manifest illusions of cursed plants into reality.<br> Some of his most
+                powerful techniques include creating wooden balls from cursed energy, which can be used to skewer
+                targets using cursed buds, which can feed on the cursed energy of those it attaches to, and creating a
+                circle of flowers, which can take away the surrounded person’s desire to fight. Their Domain Expansion,
+                Shining Sea of Growing Branches, creates a beam that is charged with the curse’s left arm.</p>
+
+            <li><button><a href="https://en.wikipedia.org/wiki/Dagon" target="_blank"><img
+                            src="https://fwmedia.fandomwire.com/wp-content/uploads/2025/01/08003514/toji-vs-dagon-1122x631.jpg"
+                            alt="Dagon"></a></button></li>
+            <p>Dagon is an unregistered Special Grade Cursed Spirit who was born from humanity’s fear of water-based
+                natural disasters. <br> Dagon’s evolved state is extremely powerful due to his heightened intelligence
+                and enhanced physical form. Dagon possesses massive amounts of cursed energy and a multitude of cursed
+                techniques.
+
+                His innate technique, Disaster Tides, lets him produce massive waves of water without any source except
+                simple cursed energy.<br> He can also release tidal waves from his fingertips and drown his opponents.
+                He can conjure Shikigami, which vary from man-eating fish, sea-serpents, to other dangerous marine life,
+                which he can organize into a death swarm. His Domain Expansion creates a sunny tropical island where his
+                shinigami can bite his prey.</p>
+
+            <li><button><a href="https://en.wikipedia.org/wiki/Choso" target="_blank"><img
+                            src="https://fwmedia.fandomwire.com/wp-content/uploads/2023/10/20015943/Choso-1122x631.jpg"
+                            alt="Choso"></a></button></li>
+            <p>Choso is a much more powerful Special Grade Curse than his brothers Eso and Kechizu.<br> He is a Cursed
+                Womb: Death Painting who is a master at hand-to-hand combat, which, combined with his tactical
+                intelligence, strength, and endurance, makes him a daunting opponent. Like Eso and Kechizu, he can also
+                use Rot and Decay with his poisoned blood, but he has mastered blood manipulation better than his
+                brothers.
+
+                He can use sharpened blood, which can slice through his targets before infecting them. He also developed
+                Supernova, which detonates orbs of blood in every direction. <br>He can improve his own performance by
+                pumping blood faster throughout his body.</p>
+        </ul>
+
+        <h2>Major Jujutsu Clans</h2>
+        <table class="aesthetic-table">
+            <thead>
+                <tr>
+                    <th>Clan Name</th>
+                    <th>Signature Technique</th>
+                    <th>Notable Members</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gojo Clan</td>
+                    <td>Limitless & Six Eyes</td>
+                    <td>Satoru Gojo</td>
+                    <td>The absolute pinnacle of the Jujutsu world due to the birth of a Six Eyes user. They operate almost entirely around Satoru's overwhelming strength.</td>
+                </tr>
+                <tr>
+                    <td>Zenin Clan</td>
+                    <td>Ten Shadows & Projection Sorcery</td>
+                    <td>Maki, Mai, Naoya, Toji</td>
+                    <td>A ruthless family that values innate techniques above all else, often ostracizing members born with little to no cursed energy.</td>
+                </tr>
+                <tr>
+                    <td>Kamo Clan</td>
+                    <td>Blood Manipulation</td>
+                    <td>Noritoshi Kamo, Choso</td>
+                    <td>A highly traditional clan with strong ties to conservative jujutsu society. Their prized technique allows for absolute control over one's own blood.</td>
+                </tr>
+                <tr>
+                    <td>Inumaki Clan</td>
+                    <td>Cursed Speech</td>
+                    <td>Toge Inumaki</td>
+                    <td>An outcast clan whose words are imbued with cursed energy. They speak in safe words (like rice ball ingredients) to prevent accidentally cursing others.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- NEW SECTION: Poster Gallery Layout -->
+        <h2>Series Posters</h2>
+        <div class="poster-gallery">
+            <div class="poster-item">
+                <h3>Season 1</h3>
+                <img src="https://www.bing.com/th/id/OIP.WAvnURRfDZMlABTCgDflXAHaLP?w=193&h=294&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.3&pid=3.1&rm=2"
+                    alt="Jujutsu Kaisen Season 1 Poster">
+            </div>
+            
+            <div class="poster-item">
+                <h3>Season 2</h3>
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9b52e811-e125-4bb8-b27b-02e36636f5d2/dg0r9vr-b1c72f9d-13e0-48c2-87ca-b2f6880f02cf.png/v1/fill/w_730,h_1095,q_70,strp/jujutsu_kaisen__season_1_poster_by_mrprathamtiwari2006_dg0r9vr-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTUwMCIsInBhdGgiOiJcL2ZcLzliNTJlODExLWUxMjUtNGJiOC1iMjdiLTAyZTM2NjM2ZjVkMlwvZGcwcjl2ci1iMWM3MmY5ZC0xM2UwLTQ4YzItODdjYS1iMmY2ODgwZjAyY2YucG5nIiwid2lkdGgiOiI8PTEwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.5UuMZXrR4v45QydD3nzo5IKEHHRzfFRN0XsaGMdZdcQ"
+                    alt="Jujutsu Kaisen Season 2 Poster">
+            </div>
+
+            <div class="poster-item">
+                <h3>Season 3</h3>
+                <img src="https://preview.redd.it/the-jujutsu-kaisen-season-3-part-i-poster-looks-goofy-v0-pny26a834f8g1.jpeg?auto=webp&s=81454e302a74d156b617f31f76cca1261cdc38cf"
+                    alt="Jujutsu Kaisen Season 3 Poster">
+            </div>
+        </div>
+        <!-- END NEW SECTION -->
+
+        <p>
+            Learn more on the
+            <a href="https://en.wikipedia.org/wiki/Jujutsu_Kaisen" target="_blank">Wikipedia page</a>.
+        </p>
+
+        <h2>Anime Details</h2>
+        <table>
+            <tr>
+                <th>Season</th>
+                <th>Episodes</th>
+                <th>Year</th>
+            </tr>
+            <tr>
+                <td>Season 1</td>
+                <td>24</td>
+                <td>2020</td>
+            </tr>
+            <tr>
+                <td>Season 2</td>
+                <td>23</td>
+                <td>2023</td>
+            </tr>
+            <tr>
+                <td>Season 3</td>
+                <td>12</td>
+                <td>2026</td>
+            </tr>
+        </table>
+
+        <footer>
+            <p>&copy; 2026 Jujutsu Kaisen Fan Page</p>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

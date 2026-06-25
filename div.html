@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Div Tag Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fb;
+        }
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .box {
+            background-color: #ffffff;
+            border: 1px solid #cfd8e3;
+            border-radius: 10px;
+            padding: 18px;
+            flex: 1 1 240px;
+            min-width: 220px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .header {
+            background-color: #d8f3ff;
+        }
+        .footer {
+            background-color: #e7f5ff;
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <h1>Using the `<div>` Tag</h1>
+        <p>The `<div>` element is a generic block container used to group and structure content. It has no semantic meaning by itself, but it is useful for layout and styling.</p>
+
+        <div class="box header">
+            <h2>Page Header</h2>
+            <p>This section is wrapped in a `<div>` for grouping header content.</p>
+        </div>
+
+        <div class="row">
+            <div class="box">
+                <h2>Sidebar</h2>
+                <p>Use a `<div>` to group sidebar content separately from the main content.</p>
+            </div>
+            <div class="box">
+                <h2>Main Content</h2>
+                <p>This `<div>` contains the primary page content and can be styled independently.</p>
+            </div>
+        </div>
+
+        <div class="box footer">
+            <h2>Footer</h2>
+            <p>The footer area is also a `<div>` container. It helps keep layout sections organized.</p>
+        </div>
+    </div>
+</body>
+</html>

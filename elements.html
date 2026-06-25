@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Elements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #fefefe;
+        }
+        h1, h2 {
+            color: #243b55;
+        }
+        .section {
+            margin-bottom: 24px;
+        }
+        a {
+            color: #0077cc;
+        }
+        figure {
+            margin: 12px 0;
+            max-width: 480px;
+        }
+        figure img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #d2dce8;
+            border-radius: 8px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+        }
+        th, td {
+            border: 1px solid #cfd8e3;
+            padding: 10px;
+            text-align: left;
+        }
+        button, input, textarea {
+            padding: 10px;
+            border: 1px solid #bbc7d6;
+            border-radius: 6px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HTML Elements Example</h1>
+
+    <section class="section">
+        <h2>Headings and Paragraphs</h2>
+        <h2>Page Section Title</h2>
+        <p>This is a paragraph that explains the basic structure of HTML content. Paragraphs are wrapped in the `<p>` element.</p>
+    </section>
+
+    <section class="section">
+        <h2>Links and Images</h2>
+        <p>Use the `<a>` tag to create links. For example: <a href="https://www.example.com" target="_blank" rel="noreferrer">Visit Example</a>.</p>
+        <figure>
+            <img src="Avatar.jpg" alt="Example avatar image">
+            <figcaption>Example image using the `<img>` tag and caption using `<figcaption>`.</figcaption>
+        </figure>
+    </section>
+
+    <section class="section">
+        <h2>Lists</h2>
+        <ul>
+            <li>Unordered list item</li>
+            <li>Another item</li>
+            <li>Final item</li>
+        </ul>
+        <ol>
+            <li>First ordered item</li>
+            <li>Second ordered item</li>
+            <li>Third ordered item</li>
+        </ol>
+    </section>
+
+    <section class="section">
+        <h2>Table</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+            </tr>
+            <tr>
+                <td>Krish</td>
+                <td>Student</td>
+            </tr>
+            <tr>
+                <td>Ashish</td>
+                <td>Developer</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Buttons and Form Controls</h2>
+        <button type="button">Click Me</button>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" placeholder="Enter your name"><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="3" cols="30" placeholder="Type a message"></textarea><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+</body>
+</html>
